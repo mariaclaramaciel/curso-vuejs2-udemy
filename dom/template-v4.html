@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p> 
+    <p>{{ saudacao() }}</p> 
+    <a v-bind:href="link">Google</a> <!-- V-bind(vincular) é uma diretiva utilizada para atributos.-->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo: 'Olá Mundo VUE JS',
+            link: 'http://www.google.com' //Sintaxe de Template!
+            //Permite vincular declarativamente o Dom rederizado aos dados da instancia Vue 
+        },
+        methods: {
+            saudacao: function(){
+                return this.titulo  
+            }
+        }
+    })
+</script>

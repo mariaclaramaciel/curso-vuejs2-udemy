@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <template v-if="logado">  
+        <p>Usuário Logado: {{ nome }}</p>
+        <p>Perfil: Admin</p>
+    </template>
+    
+    <p v-else-if="anonimo">Navegando como anonimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">
+        {{ logado ? 'Sair' : 'Entrar' }}</button>
+</div>
+<!-- Aqui utilizamos a diretiva dentro do elemento <template> que serve como uma capsula invisivel
+    então quando a condicional for falsa o template nao aparecer no html. -->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: true,
+        }
+    })
+</script>

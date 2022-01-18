@@ -1,0 +1,18 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p> 
+</div>
+
+<script>
+    //instancia vue criada, adiconando as propriedades encontradas 
+    //no objeto ao sistema de reatividade do vue.
+    //quando os valores dessas propriedades muda, a camada visual reage, atualizando-se
+    //para consdizer com novos valores.
+    new Vue({
+        el: '#app', //seletor que se refere ao elemento do html que quero controlar
+        data:{
+            titulo: 'Olá Mundo VUE JS' //chama no html diretamente
+        }
+    })
+</script>

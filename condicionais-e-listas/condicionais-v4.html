@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <template v-if="logado">  
+        <p>Usuário Logado: {{ nome }}</p>
+        <p>Perfil: Admin</p>
+    </template>
+    
+    <p v-else-if="anonimo">Navegando como anonimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">
+        {{ logado ? 'Sair' : 'Entrar' }}</button>
+    <hr>
+    <footer v-show="logado">
+        Desenvolvido para você!
+    </footer>
+    <footer v-show="!logado">
+        Desenvolvido para você desconhecido!
+    </footer>
+</div>
+<!-- Quando usa a diretiva v-show o elemneto envolvido sempre será renderizado e permanecerá no DOM -->
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: true,
+        }
+    })
+</script>

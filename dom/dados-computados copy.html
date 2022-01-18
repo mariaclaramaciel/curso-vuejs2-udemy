@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ reverseMessage }}</p>
+    <input type="text" v-model="titulo"> 
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app', 
+        data:{
+            titulo: 'Olá Mundo VUE JS' 
+        },
+        computed: {
+            reverseMessage() {
+                return this.titulo.split('').reverse().join(' ')
+            }
+        }
+        //Usamos dado computado quando queremos escrever uma expressão js complexa e que
+        // nao ficaria legal se colocada diretamente no template.
+
+        // A diferenca entre usar um method e computed é que o dado computado só sera reavaliado
+        // quando alguma de suas dependencias forem modificadas.
+
+        // Em comparacao a invocacao de um metodo sempre ira rodar a funcao, toda vez que uma nova 
+        //redenrizacao acontecer
+    })
+</script>

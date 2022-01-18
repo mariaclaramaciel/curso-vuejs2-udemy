@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <div v-for="(valor, chave, index) in pessoa">
+                {{ chave }} = {{ valor }} ({{ index + 1}})
+            </div>
+            <!-- Cada lista ocupa uma div -->
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'azul', 'roxo', 'preto'],
+            pessoas: [
+                {nome: 'Maria Clara', idade:24, peso:60},
+                {nome: 'Simara', idade:33, peso:90}
+            ]
+        }
+    })
+</script>

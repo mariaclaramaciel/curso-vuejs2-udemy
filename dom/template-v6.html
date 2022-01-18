@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }}</p> 
+    <p>{{ saudacao() }}</p> 
+    <a v-bind:href="link">Google</a> 
+    <hr>
+    <!--As chaves duplas interpretam os dados como texto simples, e não HTML. 
+        Para que você exiba HTML, utilize a diretiva v-html.
+    Se fosse a interpretação textual seria <p>{{linkHtml}}</p>, voltaria texto.-->
+        
+    <p v-html="linkHtml"></p>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo: 'Olá Mundo VUE JS',
+            link: 'http://www.google.com',
+            linkHtml: '<a href="http://www.google.com">Google</a>'
+        },
+        methods: {
+            saudacao: function(){
+                return this.titulo = 'Bom dia!!'
+            }
+        }
+    })
+</script>

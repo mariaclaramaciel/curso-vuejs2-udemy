@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, i) in cores">{{ cor }} - {{ i }}</li>
+        <!-- Aqui o i se refere ao indice do array, podendo colocar qualquer nome pois 
+        esse lugar (cor, batata) sempre sera do indice -->
+    </ul>
+</div>
+<!-- V-for percorre os elementos de uma matriz ou objeto. -->
+<!-- <li v-for="item in items">{{item.mensage}}</li> -->
+<!-- Usa uma sintaxe especial -> na forma de item in items, onde items é 
+    a fonte de dados e item é o apelido de cada elemento.  -->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'azul', 'roxo', 'preto'],
+            pessoas: [
+                {nome: 'Maria Clara', idade:24, peso:60},
+                {nome: 'Simara', idade:33, peso:90}
+            ]
+        }
+    })
+</script>

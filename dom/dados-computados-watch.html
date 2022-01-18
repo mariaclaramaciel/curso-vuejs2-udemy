@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ reverseMessage }}</p>
+    <input type="text" v-model="titulo"> 
+    <p> Houve uma mudança? {{mudança}} </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app', 
+        data:{
+            titulo: 'Olá Mundo VUE JS', 
+            mudança: false
+        },
+        watch: {
+            titulo(){
+                this.mudança = true
+            }
+        }
+        // Watch é um observador, utilizado para observar uma 
+        //dado que muda, a função é chamada com o nome do dado que ira sofrer a mudança
+    })
+</script>

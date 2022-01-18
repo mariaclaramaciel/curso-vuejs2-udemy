@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }}</p> <!--Deretiva utilizada para nao ocorrer atualização
+         quando os dados mudam -->
+    <p>{{ saudacao() }}</p> 
+    <a v-bind:href="link">Google</a> 
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo: 'Olá Mundo VUE JS',
+            link: 'http://www.google.com'
+        },
+        methods: {
+            saudacao: function(){
+                return this.titulo = 'Bom dia!!'
+            }
+        }
+    })
+</script>
